@@ -1,0 +1,6 @@
+{
+    "name": "@cactus-ui/progress-bar",
+    "version": "0.0.0",
+    "license": "ISC",
+    "main": "lib/progress-bar.js"
+}

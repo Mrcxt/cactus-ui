@@ -1,8 +1,22 @@
 <template>
-	<Almanac />
+	<div class="demo">
+		<ul class="nav">
+			<li v-for="router in routerList" :key="router.name">
+				<router-link :to="router.path">{{router.name}}</router-link>
+			</li>
+		</ul>
+		<router-view></router-view>
+	</div>
 </template>
 
 <script setup>
+	import { useRouter, useRoute } from "vue-router";
+	import { computed } from "vue";
+
+	const router = useRouter();
+
+	const routerList = computed(() => router.options.routes);
+	console.log(routerList);
 </script>
 
 <style>

@@ -1,0 +1,33 @@
+.demo-btn {
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 12px 20px;
+  outline: none;
+  border: 1px solid #b3d8ff;
+  border-radius: 4px;
+  background: #ecf5ff;
+  color: #409eff;
+  text-align: center;
+  white-space: nowrap;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  transition: .1s;
+
+  -webkit-appearance: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+
+  &:hover {
+    border-color: #409eff;
+    background: #409eff;
+    color: #fff;
+  }
+}
+
+.demo-btn+.demo-btn {
+  margin-left: 10px;
+}

@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 
-const almanac = require('..');
+const almanac = require("..");
 
-describe('almanac', () => {
-    it('needs tests');
+describe("almanac", () => {
+  it("needs tests");
 });

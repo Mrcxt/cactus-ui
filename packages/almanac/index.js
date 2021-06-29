@@ -1,7 +1,7 @@
-import Almanac from "./src/index.vue";
+import Index from "./src/index.vue";
 
-Almanac.install = (app = App) => {
-  app.component(Almanac.name, Almanac);
+Index.install = (app) => {
+  app.component(Index.name, Index);
 };
 
-export default Almanac;
+export default Index;
