@@ -1,21 +1,6 @@
 import Index from "./src/index.vue";
 
-import { reactive, nextTick, provide } from "vue";
-
-// eslint-disable-next-line no-unused-vars
-function assign(target, source) {
-  for (var index = 1, key, src; index < arguments.length; ++index) {
-    src = arguments[index];
-
-    for (key in src) {
-      if (Object.prototype.hasOwnProperty.call(src, key)) {
-        target[key] = src[key];
-      }
-    }
-  }
-
-  return target;
-}
+import { reactive } from "vue";
 
 Index.install = (app, options = {}, name = "$progress") => {
   const defaultOptions = {
@@ -32,8 +17,6 @@ Index.install = (app, options = {}, name = "$progress") => {
   const RADON_LOADING_BAR = reactive(
     Object.assign({}, defaultOptions, options, privateOptions)
   );
-
-  app.provide("RADON_LOADING_BAR", RADON_LOADING_BAR);
 
   let Progress = {
     state: {
@@ -89,8 +72,16 @@ Index.install = (app, options = {}, name = "$progress") => {
     },
   };
 
+  Index.props.rootOptions = {
+    type: Object,
+    default: () => RADON_LOADING_BAR,
+  };
+
+  console.log(Index);
+
   app.provide(name, Progress);
   app.component(Index.name, Index);
+  return Progress;
 };
 
 export default Index;

@@ -4,7 +4,7 @@
 	</div>
 </template>
 <script>
-	import { inject, computed, reactive } from "vue";
+	import { computed, reactive } from "vue";
 	export default {
 		name: "ProgressBar",
 		props: {
@@ -14,10 +14,12 @@
 			},
 		},
 		setup(props) {
-			const rootOptions = inject("RADON_LOADING_BAR");
+			console.log(props);
 
 			const style = computed(() => {
-				const options = reactive(Object.assign({}, rootOptions, props.options));
+				const options = reactive(
+					Object.assign({}, props.rootOptions, props.options)
+				);
 				return {
 					"background-color":
 						options.status !== "fail" ? options.color : options.failColor,

@@ -1,21 +1,22 @@
 <template>
 	<ProgressBar :options="options" />
 
-	<div class="demo-btn" @click="$progress.start()">start</div>
-	<div class="demo-btn" @click="$progress.pause()">pause</div>
-	<div class="demo-btn" @click="$progress.unpause()">unpause</div>
-	<div class="demo-btn" @click="$progress.increase()">increase</div>
-	<div class="demo-btn" @click="$progress.decrease()">decrease</div>
-	<div class="demo-btn" @click="$progress.finish()">finish</div>
-	<div class="demo-btn" @click="$progress.fail()">fail</div>
+	<div class="demo-btn" @click="Progress.start()">start</div>
+	<div class="demo-btn" @click="Progress.pause()">pause</div>
+	<div class="demo-btn" @click="Progress.unpause()">unpause</div>
+	<div class="demo-btn" @click="Progress.increase()">increase</div>
+	<div class="demo-btn" @click="Progress.decrease()">decrease</div>
+	<div class="demo-btn" @click="Progress.finish()">finish</div>
+	<div class="demo-btn" @click="Progress.fail()">fail</div>
 </template>
 
 <script setup>
-	import { inject } from "vue";
+	import { inject, reactive } from "vue";
 
-	const options = {};
+	const options = reactive({});
+	const rootOptions = {};
 
-	const $progress = inject("$progress");
+	const Progress = inject("$progress");
 </script>
 
 <style lang="less" scoped>
